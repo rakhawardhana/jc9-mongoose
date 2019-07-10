@@ -38,8 +38,11 @@ app.post('/users/input', (req, res) => {
     })
 
     // save to database
-    person.save().then(result => {
+    person.save()
+    .then(result => {
         res.send(result)
+    }).catch(err => {
+        res.send(err.message)
     })
 
 
